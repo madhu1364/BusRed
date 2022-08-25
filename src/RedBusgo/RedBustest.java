@@ -23,9 +23,7 @@ public class RedBustest {
 		WebDriver driver =new ChromeDriver();
 		driver.manage().window().maximize();
 		
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\madhu\\Desktop\\Testing PROJECTS\\TestRed\\src\\RedBusgo\\Redfiles.properties");
-		prop.load(fis);
+		
 		
 		
 		String month ="Sept 2022";
@@ -33,7 +31,7 @@ public class RedBustest {
 		
 		
 		driver.get("https://www.redbus.in/");
-		driver.findElement(By.xpath("//input[@class='db']")).sendKeys("From");
+		driver.findElement(By.xpath("//input[@class='db']")).sendKeys("Visakhapatnam");
 		Thread.sleep(4000);
 		List<WebElement> l=driver.findElements(By.xpath("/html/body/section/div[2]/main/section/div/div[2]/section/div/div[1]/div/input"));
 	    for(int i=0;i<l.size();i++)    
@@ -79,7 +77,9 @@ public class RedBustest {
     		Thread.sleep(2000);
     	    JavascriptExecutor a=(JavascriptExecutor)driver;
     		a.executeScript("window.scrollBy(0,100)");
+    		Thread.sleep(2000);
     		driver.findElement(By.xpath("//div[text()='Got It']")).click();
+    		driver.findElement(By.xpath("//div[@class='button']")).click();
     		
     		
     		
